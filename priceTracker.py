@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import smtplib
+import time
 
 URL = "Url to the product link go here"
 
@@ -55,4 +56,8 @@ def checkPrice():
         sendMail()
 
 
-checkPrice()
+while True:
+    checkPrice()
+    time.sleep(60)
+    #Checks every minute
+
